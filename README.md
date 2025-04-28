@@ -1,1 +1,1 @@
-"# Site de not¡cia em php" 
+"# Site de noticia em php" 
