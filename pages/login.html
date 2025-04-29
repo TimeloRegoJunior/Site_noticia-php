@@ -1,0 +1,52 @@
+<?php
+// Exemplo de verificação de erro de login
+if (isset($_GET['erro'])) {
+    $erro = $_GET['erro'];
+} else {
+    $erro = '';
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Notícias Religiosas</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Noticias</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2>Login</h2>
+        <!-- Formulário de login -->
+        <form action="processa_login.php" method="POST">
+            <div class="input-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <?php if ($erro): ?>
+                <div class="error"><?php echo $erro; ?></div>
+            <?php endif; ?>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SSPO | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
